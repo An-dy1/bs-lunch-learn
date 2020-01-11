@@ -27,3 +27,9 @@
 - A few ways of handling:
   1. Let's scroll to and then add a post-interaction wait
   2. Look at only this element and add a delay
+
+General notes:
+
+- Add javascript advanced scenario
+- Discuss merge image hack and open source
+- Show Tennessee difficulty
