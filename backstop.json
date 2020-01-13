@@ -1,7 +1,6 @@
 {
   "id": "backstop_default",
-  "viewports": [
-    {
+  "viewports": [{
       "label": "phone",
       "width": 320,
       "height": 480
@@ -15,27 +14,25 @@
   "mergeImgHack": true,
   "onBeforeScript": "puppet/onBefore.js",
   "onReadyScript": "puppet/onReady.js",
-  "scenarios": [
-    {
-      "label": "Portfolio Demo",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://127.0.0.1:5500/index.html",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 1000,
-      "hideSelectors": [".typed"],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold": 0.1,
-      "requireSameDimensions": true
-    }
-  ],
+  "scenarios": [{
+    "label": "Portfolio Demo",
+    "cookiePath": "backstop_data/engine_scripts/cookies.json",
+    "url": "http://127.0.0.1:5500/index.html",
+    "referenceUrl": "",
+    "readyEvent": "",
+    "readySelector": "",
+    "delay": 1000,
+    "hideSelectors": [".typed"],
+    "removeSelectors": [],
+    "hoverSelector": "",
+    "clickSelector": "",
+    "postInteractionWait": 0,
+    "selectors": [],
+    "selectorExpansion": true,
+    "expect": 0,
+    "misMatchThreshold": 0.1,
+    "requireSameDimensions": true
+  }],
   "paths": {
     "bitmaps_reference": "backstop_data/bitmaps_reference",
     "bitmaps_test": "backstop_data/bitmaps_test",

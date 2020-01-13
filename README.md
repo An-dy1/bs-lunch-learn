@@ -4,6 +4,10 @@
 - run through test results (viewports, labels, where they're saved, bitmaps)
 - point out: top image not loading
 
+1. First.Five run:
+
+- Make a change to a color on the page
+
 2. Second run:
 
 - Add a one second delay
@@ -33,3 +37,4 @@ General notes:
 - Add javascript advanced scenario
 - Discuss merge image hack and open source
 - Show Tennessee difficulty
+- Maybe just do this from within the development code? Or explain that you could if you were a developer, easily integrate this into styling work; or you could put it in automated functional test code as well, which in fact we have done for Tennessee, for UR I believe, and for AAFP to some extent
