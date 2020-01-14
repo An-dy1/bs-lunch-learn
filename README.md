@@ -1,10 +1,15 @@
 # 0. Introduction:
 
 - "BackstopJS automates visual regression testing of your responsive web UI by comparing DOM screenshots over time."
--
+- Easy to use, easy to get started with, easy to integrate with CI/CD and, as their documentation notes, their test reports come with a cool scrubber thingy
+- Node Package; if you have node you can have backstopjs in one easy payment of npm install -g!
+- From there, you generate the config and data files by running backstop init within your project directory
+- And now we can run our first tests
+- Now, you'll notice that I have my backstop suite separate from my code base. That was just because my portfolio is standalone and for demonstration purposes I wanted to be able to mess around separately. But I could easily have generated these files within my project. So, one thing I'd like to hit on is that this tool is just as useful for developers as it is for testers. And you'll kind of see why as I continue on. Or, I could have initialized these backstop files from within a test suite, which is what we've done here on the projects that have this implemented on it.
 
 # 1. First run:
 
+- So please do not look too closely at this, but I'm going to run some sample tests on this little portfolio website I made a year ago when I was applying to this job! And the reason I chose it is because I can run this live locally, kind of emulating a developer's workflow, and because I don't have time to wait for code changes I push to move up to Github, which I'm using to host this site.
 - with all default configs
 - run through test results (viewports, labels, where they're saved, bitmaps)
 - point out: top image not loading
@@ -60,6 +65,18 @@
 - The limits of my JavaScript abilities have been challenged by the Tennessee Tourism website. So, let me take you on a journey.
 - # TODO: Pull up repos showing the issue?
 - Remove mergeImgHack and show the problem
+- URL: https://tnuser:tnpassword@www-qa.tnvacation.com
+
+# Advanced scenarios (3):
+
+- # TODO: Running in a Docker container
+- # TODO: take screenshot from the backstopjs docs
+- Text especially renders differently across OS. So if I backstop approve images from my Mac here, and I have a job scheduled through Jenkins to run a test tomorrow morning on the AQ server, which is Windows, I'm probably going to get a failing test.
+- Docker containers:
+- ```
+  backstop test --docker
+  ```
+- The above flag will cause BackstopJS to hit your Docker local client, spin up the BackstopJS container at https://hub.docker.com/r/backstopjs/backstopjs/ and execute your test.
 
 # General notes:
 
