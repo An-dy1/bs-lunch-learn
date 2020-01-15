@@ -1,10 +1,10 @@
-report({
+{
   "testSuite": "BackstopJS",
   "tests": [
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Portfolio_Demo_0_document_0_phone.png",
-        "test": "../bitmaps_test/20200114-201018/backstop_default_Portfolio_Demo_0_document_0_phone.png",
+        "test": "../bitmaps_test/20200114-200054/backstop_default_Portfolio_Demo_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Portfolio_Demo_0_document_0_phone.png",
         "label": "Portfolio Demo",
@@ -20,17 +20,17 @@ report({
             "width": 0,
             "height": 0
           },
-          "misMatchPercentage": "6.58",
-          "analysisTime": 73
+          "misMatchPercentage": "6.73",
+          "analysisTime": 110
         },
-        "diffImage": "../bitmaps_test/20200114-201018/failed_diff_backstop_default_Portfolio_Demo_0_document_0_phone.png"
+        "diffImage": "../bitmaps_test/20200114-200054/failed_diff_backstop_default_Portfolio_Demo_0_document_0_phone.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Portfolio_Demo_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20200114-201018/backstop_default_Portfolio_Demo_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20200114-200054/backstop_default_Portfolio_Demo_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Portfolio_Demo_0_document_1_tablet.png",
         "label": "Portfolio Demo",
@@ -46,13 +46,13 @@ report({
             "width": 0,
             "height": 0
           },
-          "misMatchPercentage": "16.71",
-          "analysisTime": 117
+          "misMatchPercentage": "20.22",
+          "analysisTime": 179
         },
-        "diffImage": "../bitmaps_test/20200114-201018/failed_diff_backstop_default_Portfolio_Demo_0_document_1_tablet.png"
+        "diffImage": "../bitmaps_test/20200114-200054/failed_diff_backstop_default_Portfolio_Demo_0_document_1_tablet.png"
       },
       "status": "fail"
     }
   ],
   "id": "backstop_default"
-});
+}

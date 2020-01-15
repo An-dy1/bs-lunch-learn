@@ -1,22 +1,29 @@
 # 0. Introduction:
 
 - "BackstopJS automates visual regression testing of your responsive web UI by comparing DOM screenshots over time."
-- Easy to use, easy to get started with, easy to integrate with CI/CD and, as their documentation notes, their test reports come with a cool scrubber thingy
+- Why would you want to do this? Because, much as we might wish it were different, looks matter.
+- And why use an automated tool like Backstop? Because it can take a long time to cover even just a dozen pages, if you're also checking them at let's say two or three breakpoints. Hence, BackstopJS
+- A few features:
 - Node Package; if you have node you can have backstopjs in one easy payment of npm install -g!
-- From there, you generate the config and data files by running backstop init within your project directory
-- And now we can run our first tests
+- You can have your first test running if you change: two lines in its config file, which is just json
+- Then run these three commands
+- It produces an html report that looks like this and comes with, as their documentation says "a cool scrubber thingy"
+- Finally, last thing I'll mention now, is that it's quite easy to integrate with CI/CD.
+- QUESTIONS
 - Now, you'll notice that I have my backstop suite separate from my code base. That was just because my portfolio is standalone and for demonstration purposes I wanted to be able to mess around separately. But I could easily have generated these files within my project. So, one thing I'd like to hit on is that this tool is just as useful for developers as it is for testers. And you'll kind of see why as I continue on. Or, I could have initialized these backstop files from within a test suite, which is what we've done here on the projects that have this implemented on it.
 
 # 1. First run:
 
-- So please do not look too closely at this, but I'm going to run some sample tests on this little portfolio website I made a year ago when I was applying to this job! And the reason I chose it is because I can run this live locally, kind of emulating a developer's workflow, and because I don't have time to wait for code changes I push to move up to Github, which I'm using to host this site.
-- with all default configs
+- So please do not look too closely at this, but I'm going to run some sample tests on this little portfolio website I made a year ago when I was applying to this job! And the reason I chose it is because I can run this live locally, kind of emulating a developer's workflow, and because I don't have time to wait for code changes I push to move up to Github, which I'm using to host this site. Show the site.
+- What do we notice about the site right off the bat? Dynamic elements. Hold onto that, I'll come back to it.
+- with all default configs - highlight a few
 - run through test results (viewports, labels, where they're saved, bitmaps)
-- point out: top image not loading
+- point out: I see the loader/top image not loading; also my numbers incremented up, but my little progress bar here didn't quite happen; now, before I address some of those things, I'd like to just force a failing test, so you can see what that looks like.
 
 # 1. First.Five run:
 
 - Make a change to .contactButton on the page
+- Look at mismatch threshold
 
 # 2. Second run:
 
@@ -31,18 +38,14 @@
 
 # 3. Third run:
 
-- Notice that I have a slider - this is dynamic content; one of the major things we try to deal with in visual testing. This could easily cause a test to fail.
-- Additional delay to get a different picture up top; maybe other things different as well
+- Let's return to some of this dynamic content; one of the major things we try to deal with in visual testing. This could easily cause a test to fail.
+- Tried to get to fail with various delays to simulat various amounts of time for the site to load and I couldn't. But let's pretend: ".slides-container"
 - Show the test failure - run through the scrubber
 
 # 4. Fourth run:
 
-- Run non-headless
-- # TODO:
-  ```
-  "debugWindow": false
-  ```
-- Also ignore typed paragraph
+- Revert and now
+- Also ignore typed paragraph: ".typed"
 - Run new test; see that that's how I want BackstopJS to look at my site. Approve.
 
 # 5. Fifth run:
@@ -55,6 +58,14 @@
 
   1. Look at only this element and add a delay (just like you can exclue certain elements, you can also pick certain ones to look at, which is especially useful to a developer I think)
   2. Let's scroll to and then add a post-interaction wait and see what happens
+     "scrollToSelector"
+  3. Also, let's watch:
+
+  - Run non-headless
+
+  ```
+  "debugWindow": false
+  ```
 
 # 6. Advanced scenarios (1):
 
@@ -70,13 +81,13 @@
 # Advanced scenarios (3):
 
 - # TODO: Running in a Docker container
-- # TODO: take screenshot from the backstopjs docs
-- Text especially renders differently across OS. So if I backstop approve images from my Mac here, and I have a job scheduled through Jenkins to run a test tomorrow morning on the AQ server, which is Windows, I'm probably going to get a failing test.
 - Docker containers:
 - ```
   backstop test --docker
   ```
 - The above flag will cause BackstopJS to hit your Docker local client, spin up the BackstopJS container at https://hub.docker.com/r/backstopjs/backstopjs/ and execute your test.
+- # TODO: take screenshot from the backstopjs docs
+- Text especially renders differently across OS. So if I backstop approve images from my Mac here, and I have a job scheduled through Jenkins to run a test tomorrow morning on the AQ server, which is Windows, I'm probably going to get a failing test.
 
 # General notes:
 
